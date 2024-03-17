@@ -40,13 +40,12 @@ const createBubble = function(e)
 }
 
 if(localStorage.getItem("flashingOk") == undefined || localStorage.getItem("flashingOk") == 0)
-if (confirm("This site contains flashing colours. Would you like to continue?") == true) {
+if (confirm("This site contains flashing colours. Would you like to continue?")) {
     localStorage.setItem("flashingOk", 1) // User will not be asked again
-    // Start the bubbles!!!
-    page.addEventListener("mousemove", createBubble)
 } else {
-    // Do nothing
     localStorage.setItem("flashingOk", 0)
 }
+
+if (localStorage.getItem("flashingOk") == 1) page.addEventListener("mousemove", createBubble) // Start the bubbles!!!
 
 
