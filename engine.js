@@ -39,4 +39,5 @@ const createBubble = function(e)
     }
 }
 
+alert("This page contains flashing colours! Please close the site if you do not want to see this.");
 page.addEventListener("mousemove", createBubble)
