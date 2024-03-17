@@ -6,7 +6,7 @@ const randBetween = function(min, max) {
 
 const randColour = function()
 {
-    return `rgb(${randBetween(0,255)},${randBetween(0,255)},${randBetween(0,255)})`
+    return `rgb(${randBetween(0,255)},${randBetween(0,255)},${randBetween(0,255)})`;
 }
 
 const createBubble = function(e)
@@ -14,8 +14,8 @@ const createBubble = function(e)
     const bubble = document.createElement("div");
     bubble.setAttribute("class", "bubble");
     bubble.style.backgroundColor = randColour();
-    bubble.style.left = `${e.clientX - 25}px`
-    bubble.style.top = `${e.clientY - 25}px`
+    bubble.style.left = `${e.clientX - 25}px`;
+    bubble.style.top = `${e.clientY - 25}px`;
     page.append(bubble);
 
     const pop = bubble.animate(
@@ -41,11 +41,11 @@ const createBubble = function(e)
 
 if(localStorage.getItem("flashingOk") == undefined || localStorage.getItem("flashingOk") == 0)
 if (confirm("This site contains flashing colours. Would you like to continue?")) {
-    localStorage.setItem("flashingOk", 1) // User will not be asked again
+    localStorage.setItem("flashingOk", 1); // User will not be asked again
 } else {
-    localStorage.setItem("flashingOk", 0)
+    localStorage.setItem("flashingOk", 0);
 }
 
-if (localStorage.getItem("flashingOk") == 1) page.addEventListener("mousemove", createBubble) // Start the bubbles!!!
+if (localStorage.getItem("flashingOk") == 1) page.addEventListener("mousemove", createBubble); // Start the bubbles!!!
 
 
