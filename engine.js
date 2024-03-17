@@ -39,5 +39,14 @@ const createBubble = function(e)
     }
 }
 
-alert("This page contains flashing colours! Please close the site if you do not want to see this.");
-page.addEventListener("mousemove", createBubble)
+if(localStorage.getItem("flashingOk") == undefined || localStorage.getItem("flashingOk") == 0)
+if (confirm("This site contains flashing colours. Would you like to continue?") == true) {
+    localStorage.setItem("flashingOk", 1) // User will not be asked again
+    // Start the bubbles!!!
+    page.addEventListener("mousemove", createBubble)
+} else {
+    // Do nothing
+    localStorage.setItem("flashingOk", 0)
+}
+
+
