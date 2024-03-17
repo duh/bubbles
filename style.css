@@ -2,11 +2,21 @@ body
 {
     margin: 0;
     cursor: url(cursor.cur), pointer;
+    font-family: 'Courier New', Courier, monospace;
 }
+
 #main
 {
     min-height: 100vh;
     min-width: 100vw;
+    text-align: center;
+
+}
+
+#hint
+{
+    position:absolute;
+    top: 50%;
 }
 
 .bubble
@@ -16,3 +26,4 @@ body
     height: 50px;
     border-radius: 100%;
 }
+
